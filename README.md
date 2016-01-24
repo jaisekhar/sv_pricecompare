@@ -1,4 +1,4 @@
-PRICE COMPARISION APP
+PRICE COMPARISION APP| 
 Using this app you can search products and compare their prices from paytm and amazon websites.
 
 
@@ -18,7 +18,7 @@ $ git clone https://github.com/jaisekhar/sv_pricecompare.git
 
 where "sv_pricecompare" is the application name.
 
-Change directory to startup and start the web server:
+Change directory to sv_pricecompare and start the web server:
 $ cd sv_pricecompare
 
 Next install all gems 
