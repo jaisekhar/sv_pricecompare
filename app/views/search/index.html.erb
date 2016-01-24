@@ -1,0 +1,54 @@
+<div>
+	<h1 style="text-align: center;" >Product Comparision</h1>
+	<div class="container">
+		<%= form_tag(root_path, :method => "get", id: "search-form", :class => "input-group") do %>
+		<div class="row">
+		<div class="col-md-2 offset-right-0"><select class="form-control input-group" name="category">
+				<option value = "mobile_phones">Mobile Phones</option>
+		    <option value = "tablets">Tablets</option>
+		    <option value = "mobile_memory">Memory Cards</option>
+				<option value = "dslrs">Cameras</option>
+				<option value = "laptops">Laptops</option>
+				<option value = "ipods">iPods</option>
+				<option value = "routers">Networking Devices</option>
+				<option value = "desktops">Desktops</option>
+				<option value = "led_tv">LED TV's</option>
+				<option value = "gaming_consoles">Gaming Consoles</option>
+				<option value = "pen_drives">External memory</option>
+			</select></div>
+			<div class="col-md-9 offset-left-0 offset-right-0"><%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Product" %></div>
+		<div class="col-md-1 offset-left-0"><span class="input-group-btn">
+			<button class="btn btn-info" type="submit">Search</button>
+		</span></div>
+	</div>
+		<% end %>
+		<table class="table">
+			<tr class="row">
+				<th class="col-md-4">Product</th>
+				<th class="col-md-4">Store</th>
+				<th class="col-md-4">Price</th>
+			</tr>
+			<% (0..@tproduct.length-1).each do |i|%>
+			<tr class="row">
+				<td class="row">
+					<div class="col-md-4">
+						<img src=<%= @iproduct[i] %> height="100" width="90" />
+					</div>
+					<div class="col-md-8">
+						<%= @tproduct[i] %>
+				</div>
+				</td>
+				<td>
+					<img src=<%= @aproduct[i] %> height="35" width="35" />
+					<%= link_to "Go to Store",
+            			:controller => "search",
+            			:action => "store",
+            			:sto => @uproduct[i]
+            		%>
+				</td>
+				<td>&#8377;<%=@fproduct[i] %>/-</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
